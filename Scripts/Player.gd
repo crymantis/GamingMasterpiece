@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
-@export var DASH_IMPULSE_VELOCITY = 500
+@export var DASH_IMPULSE_VELOCITY = 400
 const JUMP_VELOCITY = -400.0
+@export var acceleration = 3
 
 # Dash controlling variables
 @export var maxDashes = 1
 var remainingDashes = 1
+@export var dashExpiryTime = 0.2
+@export var timeSinceDash = dashExpiryTime
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -15,7 +18,12 @@ func _input(event):
 	# dash
 	if event.is_action_pressed("ui_dash"):
 		if remainingDashes > 0:
-			velocity = get_dash_vector() * DASH_IMPULSE_VELOCITY
+			var dashVector = get_dash_vector()
+			print("before", velocity)
+			velocity = dashVector * DASH_IMPULSE_VELOCITY
+			print("after", velocity)
+			
+			timeSinceDash = 0
 			remainingDashes -= 1
 
 func _physics_process(delta):
@@ -34,14 +42,15 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if timeSinceDash > dashExpiryTime:
+		velocity.x = move_toward(velocity.x, direction * SPEED, acceleration)
 
+	manage_dash_timing(delta)
 	move_and_slide()
 	player_animations()
-	# print(get_dash_vector())
+
+func manage_dash_timing(delta):
+	timeSinceDash += delta
 
 func get_dash_vector():
 	var vec = Vector2(0,0)
