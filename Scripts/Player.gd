@@ -11,13 +11,18 @@ var remainingDashes = 1
 @export var dashExpiryTime = 0.2
 @export var timeSinceDash = dashExpiryTime
 
+@export_group("World References")
+@export var respawnPoint: Node
+
+@export var deathZone: Node
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _input(event):
 	# dash
 	if event.is_action_pressed("ui_dash"):
-		if remainingDashes > 0:
+		if remainingDashes > 0 and timeSinceDash > dashExpiryTime:
 			var dashVector = get_dash_vector()
 			print("before", velocity)
 			velocity = dashVector * DASH_IMPULSE_VELOCITY
@@ -48,6 +53,8 @@ func _physics_process(delta):
 	manage_dash_timing(delta)
 	move_and_slide()
 	player_animations()
+	
+	
 
 func manage_dash_timing(delta):
 	timeSinceDash += delta
@@ -56,8 +63,14 @@ func get_dash_vector():
 	var vec = Vector2(0,0)
 	vec.x = Input.get_axis("ui_left", "ui_right")
 	vec.y = Input.get_axis("ui_up", "ui_down")
+	if vec.length() == 0:
+		if $AnimatedSprite2D.flip_h:
+			vec.x = -1
+		else:
+			vec.x = 1
 	
-	return vec
+	
+	return vec.normalized()
 
 # Animations
 func player_animations():
@@ -76,3 +89,9 @@ func player_animations():
 	
 	if !is_on_floor() and velocity.y != 0:
 		$AnimatedSprite2D.play("jumping")
+		
+func respawn():
+	set_position(respawnPoint.position)
+
+func _onDeath(body):
+	respawn()
