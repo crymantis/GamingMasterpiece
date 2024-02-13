@@ -1,0 +1,164 @@
+{
+  "main": {
+    "id": "c00d415d2aef40d8",
+    "type": "split",
+    "children": [
+      {
+        "id": "3e34924e5d1af489",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "20a630fca518288a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "16acda7a00e1f8b3",
+    "type": "split",
+    "children": [
+      {
+        "id": "45970848c401ffcc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fe6394de4a2795e2",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "cbbe1847ec1bc0bd",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0679043168e8df69",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b3220016ee229a05",
+    "type": "split",
+    "children": [
+      {
+        "id": "f2f4442c79bf1892",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6acfc4d82f4cd663",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "70a59f840ae36c5c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "fe91c9870ea4013a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "369f3762e1f1fab0",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "README.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "20a630fca518288a",
+  "lastOpenFiles": [
+    "Scenes/Mai7DD8.tmp",
+    "Scenes/Mai8330.tmp",
+    "Scripts/Pla814F.tmp",
+    "Scenes/Mai80EE.tmp",
+    "Scenes/MaiB5C5.tmp",
+    "Scenes/MaiB3BA.tmp",
+    "Scenes/Mai618A.tmp",
+    "Scenes/MaiB7C5.tmp",
+    "Scenes/Mai47FC.tmp",
+    "Scenes/Mai45CA.tmp",
+    "Scenes/Mai1629.tmp",
+    "Untitled.md"
+  ]
+}

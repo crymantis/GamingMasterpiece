@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+const SPEED = 500.0
 @export var DASH_IMPULSE_VELOCITY = 400
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -650.0
 @export var acceleration = 3
+@export var terminalVelocity = 8000
+@export var wallVelocity = 200
+@export var wallJumpVelocity: Vector2 = Vector2(550.0,-1550.0)
 
 # Dash controlling variables
 @export var maxDashes = 1
@@ -15,6 +18,9 @@ var remainingDashes = 1
 @export var respawnPoint: Node
 
 @export var deathZone: Node
+
+# State management
+var isWallSliding = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -34,15 +40,19 @@ func _input(event):
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y += (gravity * delta)*2
 	
 	# When grounded
 	if is_on_floor():
 		remainingDashes = maxDashes
+		
+	if is_on_wall() and Input.get_axis("ui_left", "ui_right") != 0:
+		isWallSliding = true
+	else:
+		isWallSliding = false
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	handle_jump()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -53,8 +63,23 @@ func _physics_process(delta):
 	manage_dash_timing(delta)
 	move_and_slide()
 	player_animations()
+	clamp_velocity()
 	
-	
+func handle_jump():
+	if Input.is_action_just_pressed("ui_jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+	elif Input.is_action_just_pressed("ui_jump") and isWallSliding == true:
+		isWallSliding = false
+		if Input.get_axis("ui_left", "ui_right") < 0:
+			velocity = wallJumpVelocity
+		elif Input.get_axis("ui_left", "ui_right") > 0:
+			velocity = wallJumpVelocity * Vector2(-1,1)
+
+func clamp_velocity():
+	if isWallSliding:
+		velocity.y = clamp(velocity.y,-wallVelocity,wallVelocity)
+	else:
+		velocity.y = clamp(velocity.y,-terminalVelocity,terminalVelocity)
 
 func manage_dash_timing(delta):
 	timeSinceDash += delta
