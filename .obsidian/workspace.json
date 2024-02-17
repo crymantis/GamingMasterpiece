@@ -22,14 +22,14 @@
             }
           },
           {
-            "id": "9c4f07cac4fd728d",
+            "id": "379ba307154988fc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Documentation/Self Freeing Animations.md",
-                "mode": "preview",
-                "source": true
+                "file": "Documentation/Global Script.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -100,7 +100,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Documentation/Self Freeing Animations.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +116,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Documentation/Self Freeing Animations.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Documentation/Self Freeing Animations.md"
+                "file": "Untitled.md"
               }
             }
           }
@@ -163,22 +161,29 @@
   },
   "active": "fe6394de4a2795e2",
   "lastOpenFiles": [
-    "Documentation/Media/Pasted image 20240216213626.png",
-    "Documentation/Media",
-    "Documentation/Media/Pasted image 20240216213217.png",
     "Documentation/-- Home --.md",
+    "Documentation/Global Script.md",
+    "Documentation/Media/Pasted image 20240217140211.png",
+    "Scenes/Mai9D9C.tmp",
+    "Scripts/Glo9D87.tmp",
+    "Scenes/Mai9D65.tmp",
+    "Scenes/MainScene.gd",
+    "Documentation/Media/Pasted image 20240217140012.png.import",
+    "Documentation/Media/Pasted image 20240217140012.png",
+    "Documentation/Media/Pasted image 20240217135701.png.import",
+    "Documentation/Media/Pasted image 20240217135703.png.import",
+    "Documentation/Media/Pasted image 20240217135703.png",
+    "Documentation/Media/Pasted image 20240217135701.png",
+    "proD532.tmp",
+    "Documentation/Media/Pasted image 20240217135525.png.import",
+    "Documentation/Media/Pasted image 20240217135522.png.import",
+    "Documentation/Media/Pasted image 20240217135525.png",
+    "Documentation/Media/Pasted image 20240217135522.png",
+    "Documentation/Media/Pasted image 20240216213626.png",
+    "Documentation/Media/Pasted image 20240216213217.png",
     "Documentation/Self Freeing Animations.md",
     "README.md",
     "icon.svg",
-    "Untitled.md",
-    "Documentation",
-    "Scenes/Mai7DD8.tmp",
-    "Scenes/Mai8330.tmp",
-    "Scripts/Pla814F.tmp",
-    "Scenes/Mai80EE.tmp",
-    "Scenes/MaiB5C5.tmp",
-    "Scenes/MaiB3BA.tmp",
-    "Scenes/Mai618A.tmp",
-    "Scenes/MaiB7C5.tmp"
+    "Untitled.md"
   ]
 }
