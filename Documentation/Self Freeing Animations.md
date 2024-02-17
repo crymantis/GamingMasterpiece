@@ -1,7 +1,5 @@
 ---
-reference:
-- https://www.youtube.com/watch?v=5_3NrtkI478
-- https://www.youtube.com/watch?v=LBx9NxqchKE
+obsidianUIMode: preview
 ---
 
 **This example covers making a impact animation after falling.**
@@ -28,3 +26,8 @@ This will destroy the dust node once the animation finishes!
 ![[Pasted image 20240216213626.png]]
 2. Set it to autoplay and no loop
 3. Add keyframe to the *Visibility > Modulate* property to lower the alpha over time
+
+
+> [!NOTE] References
+> [How to make a landing dust particle in Godot 4 in 3 minutes](https://www.youtube.com/watch?v=5_3NrtkI478)
+> [How to Make Self-Freeing Particles in Godot](https://www.youtube.com/watch?v=LBx9NxqchKE)

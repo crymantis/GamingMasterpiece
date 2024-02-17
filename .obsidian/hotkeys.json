@@ -7,5 +7,15 @@
       ],
       "key": "E"
     }
+  ],
+  "editor:insert-callout": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod",
+        "Shift"
+      ],
+      "key": "C"
+    }
   ]
 }
